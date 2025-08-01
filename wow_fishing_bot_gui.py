@@ -4,6 +4,7 @@ import json
 import threading
 import time
 from wow_fishing_bot import cast_fishing, find_bobber, detect_bite, click_bobber, loot
+from PIL import Image, ImageTk
 
 class FishingBotGUI:
     def __init__(self, root):
@@ -18,6 +19,13 @@ class FishingBotGUI:
         # Konfiguration laden
         self.load_config()
         
+        # Logo laden und anzeigen
+        logo_image = Image.open("logo.png")
+        logo_image = logo_image.resize((120, 120), Image.LANCZOS)
+        self.logo_photo = ImageTk.PhotoImage(logo_image)
+        logo_label = ttk.Label(self.root, image=self.logo_photo)
+        logo_label.pack(pady=(10, 0))
+        
         # GUI-Elemente erstellen
         self.create_widgets()
         
@@ -29,7 +37,8 @@ class FishingBotGUI:
             self.config = {
                 "template_path": "bobber_template.png",
                 "bobber_threshold": 0.4,
-                "bite_threshold": 15
+                "bite_threshold": 15,
+                "scan_region_size": 60
             }
             self.save_config()
     
@@ -38,6 +47,13 @@ class FishingBotGUI:
             json.dump(self.config, f, indent=4)
     
     def create_widgets(self):
+        # Logo laden und anzeigen
+        logo_image = Image.open("logo.png")
+        logo_image = logo_image.resize((120, 120), Image.LANCZOS)
+        self.logo_photo = ImageTk.PhotoImage(logo_image)
+        logo_label = ttk.Label(self.root, image=self.logo_photo)
+        logo_label.pack(pady=(10, 0))
+        
         # Template-Auswahl
         template_frame = ttk.LabelFrame(self.root, text="Bobber Template", padding=10)
         template_frame.pack(fill="x", padx=10, pady=5)
@@ -74,6 +90,19 @@ class FishingBotGUI:
         
         bite_label = ttk.Label(bite_frame, textvariable=self.bite_threshold_var)
         bite_label.pack()
+        
+        # Scan Region Size
+        scan_frame = ttk.LabelFrame(self.root, text="Scan-Bereich (20 - 200 Pixel)", padding=10)
+        scan_frame.pack(fill="x", padx=10, pady=5)
+        
+        self.scan_region_var = tk.IntVar(value=self.config.get("scan_region_size", 60))
+        scan_scale = ttk.Scale(scan_frame, from_=20, to=200,
+                              variable=self.scan_region_var,
+                              orient="horizontal", length=300)
+        scan_scale.pack(fill="x")
+        
+        scan_label = ttk.Label(scan_frame, textvariable=self.scan_region_var)
+        scan_label.pack()
         
         # Start/Stop Button
         self.start_stop_button = ttk.Button(self.root, text="Start", command=self.toggle_bot)
@@ -112,6 +141,7 @@ class FishingBotGUI:
             # Konfiguration aktualisieren
             self.config["bobber_threshold"] = self.bobber_threshold_var.get()
             self.config["bite_threshold"] = self.bite_threshold_var.get()
+            self.config["scan_region_size"] = self.scan_region_var.get()
             self.save_config()
             
             # Bot-Logik

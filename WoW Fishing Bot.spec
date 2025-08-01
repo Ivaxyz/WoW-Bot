@@ -1,12 +1,21 @@
 # -*- mode: python ; coding: utf-8 -*-
 
-
 a = Analysis(
     ['wow_fishing_bot_gui.py'],
     pathex=[],
     binaries=[],
-    datas=[],
-    hiddenimports=[],
+    datas=[
+        ('logo.png', '.'),
+        ('bobber_template.png', '.'),
+        ('config.json', '.'),
+        ('wow_fishing_bot.py', '.')
+    ],
+    hiddenimports=[
+        'PIL._tkinter_finder',
+        'tkinter',
+        'tkinter.ttk',
+        'tkinter.filedialog'
+    ],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -35,4 +44,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon='logo.png'
 )

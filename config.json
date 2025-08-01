@@ -1,5 +1,6 @@
 {
     "template_path": "C:/Projects/WoW Bot/bobber_template.png",
     "bobber_threshold": 0.20175438596491227,
-    "bite_threshold": 15
+    "bite_threshold": 15,
+    "scan_region_size": 60
 }
