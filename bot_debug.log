@@ -1,0 +1,25 @@
+2025-08-01 16:18:10,064 - INFO - Konfiguration geladen: {'template_path': 'C:/Projects/WoW Bot/bobber_template.png', 'bobber_threshold': 0.20175438596491227, 'bite_threshold': 15, 'scan_region_size': 60}
+2025-08-01 16:18:10,064 - INFO - === WoW Fishing Bot Debug-Modus gestartet ===
+2025-08-01 16:18:10,075 - INFO - Bildschirmauflösung: 2560x1440
+2025-08-01 16:18:10,075 - INFO - Starte WoW Angel-Bot...
+2025-08-01 16:18:10,075 - INFO - Drücke Ctrl+C zum Beenden
+2025-08-01 16:18:10,075 - INFO - --- Neuer Angel-Zyklus ---
+2025-08-01 16:18:10,075 - INFO - Drücke Taste: 1
+2025-08-01 16:18:10,177 - INFO - Angel ausgeworfen.
+2025-08-01 16:18:10,278 - INFO - Mauszeiger in sichere Position bewegt
+2025-08-01 16:18:11,779 - INFO - Mache Screenshot...
+2025-08-01 16:18:11,855 - INFO - Screenshot gemacht: (1440, 2560, 3)
+2025-08-01 16:18:11,856 - INFO - Lade Template: C:/Projects/WoW Bot/bobber_template.png
+2025-08-01 16:18:11,865 - INFO - Template geladen: (190, 235, 3)
+2025-08-01 16:18:12,255 - INFO - Template-Matching Ergebnis: max_val=0.3801, threshold=0.20175438596491227
+2025-08-01 16:18:12,256 - INFO - Bobber gefunden bei: 249, 728
+2025-08-01 16:18:12,259 - INFO - Biss-Überwachung gestartet: Region=(219,698,279,758), Threshold=15
+2025-08-01 16:18:12,259 - INFO - Kalibriere Biss-Erkennung... (Scan-Bereich: 60x60 Pixel)
+2025-08-01 16:18:13,036 - INFO - Referenzbilder gesammelt und Durchschnitt berechnet
+2025-08-01 16:18:13,036 - INFO - Überwache Bobber auf Biss...
+2025-08-01 16:18:30,055 - INFO - Kein Biss erkannt (Timeout).
+2025-08-01 16:18:32,056 - INFO - --- Neuer Angel-Zyklus ---
+2025-08-01 16:18:32,057 - INFO - Drücke Taste: 1
+2025-08-01 16:18:32,158 - INFO - Angel ausgeworfen.
+2025-08-01 16:18:32,258 - INFO - Mauszeiger in sichere Position bewegt
+2025-08-01 16:18:32,312 - INFO - Bot gestoppt durch Benutzer
